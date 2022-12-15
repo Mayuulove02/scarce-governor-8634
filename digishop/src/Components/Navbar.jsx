@@ -10,22 +10,15 @@ import {
     Box,
     Flex,
     Avatar,
-
     Button,
     MenuDivider,
-
     Stack,
     useColorMode,
     Center,
-    Text,
-   
-} from '@chakra-ui/react';
+    Text} from '@chakra-ui/react';
 import { BsSearch } from "react-icons/bs";
 import img1 from "../Utils/Logo.png"
-
 import { ChevronDownIcon,  MoonIcon, SunIcon } from '@chakra-ui/icons';
-
-
 
 
 const Navbar = () => {
@@ -39,13 +32,13 @@ const Navbar = () => {
                 display: "flex",
                 justifyContent: "right",
                 gap: "10px",
-                color: "white",
+                color: "black",
                 backgroundColor: "#0E6548",
                 fontFamily: "Open Sans,sans-serif,Arial,Helvetica",
 
 
             }} >
-                Save $50 with App
+               
                 <Menu>
                     <MenuButton  >
                         Language
@@ -61,7 +54,7 @@ const Navbar = () => {
                         <MenuItem>Burmese</MenuItem>
                     </MenuList>
                 </Menu>
-
+                    <h1>|</h1>
                 <Menu>
                     <MenuButton  >
                         Support Center

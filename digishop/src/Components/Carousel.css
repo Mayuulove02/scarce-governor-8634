@@ -1,0 +1,9 @@
+.h-banner {
+    --banner-fixed-height: 20vh;
+  
+    height: var(--banner-fixed-height);
+    outline: none;
+  
+   
+  }
+  
