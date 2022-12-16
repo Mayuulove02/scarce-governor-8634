@@ -19,10 +19,12 @@ import {
 import { BsSearch } from "react-icons/bs";
 import img1 from "../Utils/Logo.png"
 import { ChevronDownIcon,  MoonIcon, SunIcon } from '@chakra-ui/icons';
+import { Link } from 'react-router-dom';
 
 
 const Navbar = () => {
     const { colorMode, toggleColorMode } = useColorMode();
+   
 
     return (
         <div style={{ backgroundColor: "#0E6548" }}>
@@ -133,7 +135,8 @@ const Navbar = () => {
                                         </Center>
                                         <br />
                                         <MenuDivider />
-                                        <MenuItem>Your Servers</MenuItem>
+                                        
+                                        <MenuItem>Cart</MenuItem>
                                         <MenuItem>Account Settings</MenuItem>
                                         <MenuItem>Logout</MenuItem>
                                     </MenuList>
@@ -162,7 +165,8 @@ const Navbar = () => {
     <MenuItem>Security Systems</MenuItem>
   </MenuList>
 </Menu>
-<Text fontSize='md' fontWeight="medium" color="white"  marginTop="10px" >New</Text>
+<Link to="/products">
+<Text fontSize='md' fontWeight="medium" color="white"  marginTop="10px" >New</Text></Link>
 <Text fontSize='md' fontWeight="medium" color="white" marginTop="10px" >Bestselling</Text>
 <Text fontSize='md'fontWeight="medium" color="white" marginTop="10px"  >Brand</Text>
 <Text fontSize='md'fontWeight="medium" color="white" marginTop="10px" >Clearance</Text>
