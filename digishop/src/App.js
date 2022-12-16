@@ -1,10 +1,12 @@
 
 import './App.css';
+import AllRoutes from './Components/AllRoutes';
 import { Footer } from './Components/Footer';
 import Navbar from './Components/Navbar';
+import Snowfall from 'react-snowfall'
 
+// import HomePage from './Pages/HomePage';
 
-import HomePage from './Pages/HomePage';
 
 
 // const snowFlake =document.createElement(tagName:"img")
@@ -18,9 +20,18 @@ function App() {
     <div className="App">
       <Navbar />
       
-     <HomePage />
-      <Footer />
+     {/* <HomePage />*/}
+     {/* <Snowfall style={{
+                position: "fixed",
+                width: "100vw",
+                height: "100vh"
+            }}
+                snowflakeCount={180}
 
+            /> */}
+      <AllRoutes />
+      
+      <Footer /> 
     </div>
   );
 }

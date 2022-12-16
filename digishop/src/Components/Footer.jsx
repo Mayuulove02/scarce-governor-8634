@@ -13,7 +13,7 @@ export const Footer = () => {
     
 
     return (
-        <div id="footer">
+        <div id="footer" style={{marginTop:"50px"}}>
             
             <div id="subscribeFooter">
                 <input type="text" placeholder="Enter email to get a 5% off coupon"/>
