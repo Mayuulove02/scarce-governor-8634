@@ -20,7 +20,7 @@ import {
   } from '@chakra-ui/react';
 import axios from 'axios';
 import {  useEffect,  useState } from 'react';
-import { Link, useParams } from 'react-router-dom';
+import {  NavLink, useParams } from 'react-router-dom';
 
 import { FiShoppingCart } from 'react-icons/fi';
   
@@ -30,10 +30,9 @@ import { FiShoppingCart } from 'react-icons/fi';
     const [cart ,setCart] = useState({})
     const {id} = useParams();
     const [count,setCount] = useState(1)
+    
 
-    // const {state ,dispatch} = useContext(CartContext);
-    // const cancelRef =useRef();
-
+   
 
     useEffect(()=>{
        axios.get(`https://di.onrender.com/products/${id}`).then(({data})=>{
@@ -50,7 +49,8 @@ import { FiShoppingCart } from 'react-icons/fi';
     const handleSub =()=>{
         setCount(count-1)
     }
-
+    
+    
 
     return (
     //   <Center py={12}>
@@ -220,6 +220,9 @@ import { FiShoppingCart } from 'react-icons/fi';
   <CardFooter>
     <Text fontSize="xl" >Total Bill = ₹ {Math.floor(count * price)}</Text>
   </CardFooter>
+  <NavLink to="/payments">
+  <Button  bgColor='#06f' color="white">Proceed To Checkout </Button>
+  </NavLink>
 </Card>
     </Flex>
     

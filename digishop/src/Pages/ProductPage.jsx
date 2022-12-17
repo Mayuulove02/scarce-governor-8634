@@ -3,11 +3,45 @@ import axios from "axios"
 import { useState, useEffect } from 'react';
 import { Button, Card, CardBody, Checkbox, Container,  Grid, GridItem, Select,  Text } from '@chakra-ui/react';
 import ProductCard from '../Components/ProductCard';
+import Loading from '../Components/Loading';
+// import Pagination from '../Components/Pagination';
+
+
+// const getData = async ({page=1,sortBy="asc"})=>{
+//   return axios.get(`https://di.onrender.com/products?page=${page}&orderBy=${sortBy}&limit=10`
+//   )
+// }
 
 
 const ProductPage = () => {
 
   const [data, setData] = useState([]);
+  const [loading,setLoading] = useState(true);
+ 
+  // const [sortBy,setSortBy] = useState("asc");
+  
+ 
+
+  setTimeout(()=>{
+    setLoading(false)
+  },2500)
+
+  // useEffect(()=>{
+  //   setLoading(true)
+  //   getData({
+  //     page,
+  //     sortBy
+  //   })
+  //   .then(res=>{
+  //     setData(res.data)
+  //     setLoading(false)
+  //     setTotalPages(res.totalPages)
+  //   })
+  //   .catch((err)=>{
+  //     setError(true)
+  //   })
+  // },[page,sortBy])
+  // console.log(data)
 
   useEffect(() => {
     axios.get(`https://di.onrender.com/products`).then((res) => {
@@ -17,6 +51,17 @@ const ProductPage = () => {
   }, [])
   console.log(data)
 
+
+  
+  
+
+  if(loading){
+
+    return (  
+       <Loading />
+      ) 
+  
+   }
 
 
   return (
@@ -35,8 +80,8 @@ const ProductPage = () => {
   <br/>
   <Text fontSize="md">Sort By :  <Button border="1px solid blue" backgroundColor="white" >Best Match</Button> <Button backgroundColor="white" >New Arrival</Button> <Button backgroundColor="white" >Price : <Select placeholder='Price'>
  
-  <option value='option2'>High to Low</option>
-  <option value='option3'>Low to high</option>
+  <option value='option2' >High to Low</option>
+  <option value='option3'  >Low to high</option>
 </Select></Button> </Text>
   </CardBody>
 </Card>
@@ -64,7 +109,7 @@ const ProductPage = () => {
             })
           }
         </Grid>
-      </Container>
+        </Container>
     </div>
   )
 }

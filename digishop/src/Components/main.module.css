@@ -447,11 +447,12 @@ hr {
 }
 
 .LogoutHOver {
-    background-color: #F70A8B;
+    background-color: #06bf;
+    color: white;
     border-radius: 5px;
     padding: 2px 10px;
 }
 
 .LogoutHOver:hover {
-    background-color: rgb(245, 16, 35);
+    background-color: #06bf;
 }

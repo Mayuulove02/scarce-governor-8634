@@ -1,13 +1,29 @@
-import React from 'react'
-import { Container, Image, Box, Heading, Grid, GridItem, Text, CardBody, Card, Stack } from '@chakra-ui/react'
+import React, { useState } from 'react'
+import { Container, Image, Box, Heading, Grid, GridItem, Text, CardBody, Card, Stack} from '@chakra-ui/react'
 import sa from "../Utils/sale.jpg";
 import Snowfall from 'react-snowfall'
 // import bg from "../Utils/back.jpg";
 import Carousel from '../Components/Carousel';
+import { Link, NavLink } from 'react-router-dom';
+import Loading from '../Components/Loading';
 
 // style={{ backgroundImage: `url(${bg})` , opacity: "1"}}
 
 const HomePage = () => {
+    const [isLoading, setIsLoading] = useState(true);
+
+    setTimeout(() => {
+        setIsLoading(false)
+         
+        }, 1000);
+         
+        if(isLoading){
+
+            return (  
+               <Loading />
+              ) 
+          
+           }
     return (
         <div >
 
@@ -25,6 +41,7 @@ const HomePage = () => {
             <Container maxW="7xl" >
                 {/* #B40325 for theme of christmas  */}
                 <Heading marginTop="20px" color="#B40325" >Deal of the Day</Heading>
+                <NavLink to="/products">
                 <Container maxW='6xl' marginTop="20px">
                     <Grid templateColumns='repeat(8, 1fr)' gap={6} >
                         <GridItem w='90%'  ><Image src="https://img.gkbcdn.com/p/2022-08-01/ANBERNIC-RG353P-Portable-Game-Console-32GB-eMMC-16GB-64G-TF-Card-Black-510360-0._w280_p1_.jpg" />
@@ -45,7 +62,7 @@ const HomePage = () => {
                             <Text fontSize='xs' backgroundColor="red" color="black" >33% OFF</Text><Text fontSize='md' fontWeight="bold" align="left">₹1689.70</Text></GridItem>
 
                     </Grid>
-                </Container>
+                </Container></NavLink>
                 <Heading marginTop="30px" color="#B40325" >Trending Categories</Heading>
                 <Container maxW='7xl' marginTop="30px">
                     <Grid templateColumns='repeat(3, 1fr)' gap={6}>
@@ -109,6 +126,7 @@ const HomePage = () => {
                     </Grid>
                 </Container>
                 <Heading marginTop="30px" color="#B40325" >New For You</Heading>
+                <Link to="/products">
                 <Container maxW='7xl' backgroundColor="#fff" marginTop="20px">
                     <Card >
                         <Grid templateColumns='repeat(4, 1fr)' gap={6}>
@@ -119,7 +137,7 @@ const HomePage = () => {
 
                         </Grid>
                     </Card>
-                </Container>
+                </Container></Link>
                 <Heading marginTop="30px" color="#B40325" >Enjoy Life</Heading>
                 <Container maxW='5xl' marginTop="30px">
                     <Grid
@@ -139,6 +157,7 @@ const HomePage = () => {
                     </Grid>
                 </Container>
                 <Heading marginTop="30px" color="#B40325" >Best Sellers</Heading>
+                <NavLink to="/products">
                 <Container maxW='7xl' marginTop="30px">
                     <Grid templateColumns='repeat(4, 1fr)' gap={6}>
                         <GridItem w='100%' ><Card maxW='sm'>
@@ -215,7 +234,7 @@ const HomePage = () => {
                         </Card></GridItem>
 
                     </Grid>
-                </Container>
+                </Container></NavLink>
                 <Heading marginTop="30px" color="#B40325" >Popular Brands</Heading>
                 <Container maxW='6xl' marginTop="30px">
                    <Carousel />
@@ -265,6 +284,7 @@ const HomePage = () => {
                 </Container>
                 </Container>
                 <Heading marginTop="30px" color="#B40325" >Recommended For You</Heading>
+                <NavLink to="/products">
                 <Container maxW='7xl' marginTop="30px">
                     <Grid templateColumns='repeat(8, 1fr)' gap={2}>
                         <GridItem w='100%' ><Card maxW='sm'>
@@ -413,7 +433,7 @@ const HomePage = () => {
                         </Card></GridItem>
 
                     </Grid>
-                </Container>
+                </Container></NavLink>
             </Container>
         </div>
     )
