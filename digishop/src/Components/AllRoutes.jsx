@@ -7,6 +7,7 @@ import ProductDetails from "../Components/ProductDetails"
 import CartPage from '../Pages/CartPage';
 import OrderSuccessfull from './OrderSuccessfull';
 import Payment from '../Pages/Payment';
+import PrivateRoute from './PrivateRoute';
 
 const AllRoutes = () => {
   return (
@@ -14,12 +15,12 @@ const AllRoutes = () => {
         <Routes>
             <Route path='/' element={<HomePage />}/>
             <Route path='/login' element={<Login />}/>
-            <Route path='/products' element={<ProductPage />}/>
-            <Route path='/products/:id' element={<ProductDetails />}/>
+            <Route path='/products' element={<PrivateRoute><ProductPage /></PrivateRoute>}/>
+            <Route path='/products/:id' element={<PrivateRoute><ProductDetails /></PrivateRoute>}/>
             
-            <Route path='/cart/:id' element={<CartPage />}/>
-            <Route path="/checkout" element={<OrderSuccessfull />}/>
-            <Route path="/payments" element={<Payment />}/>
+            <Route path='/cart/:id' element={<PrivateRoute><CartPage /></PrivateRoute>}/>
+            <Route path="/checkout" element={<PrivateRoute><OrderSuccessfull /></PrivateRoute>}/>
+            <Route path="/payments" element={<PrivateRoute><Payment /></PrivateRoute>}/>
         </Routes>
     </div>
   )
