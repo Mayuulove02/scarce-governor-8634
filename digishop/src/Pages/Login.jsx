@@ -71,7 +71,7 @@ const Login = () => {
 
   return (
     <>
-      <Stack justify="center" direction={{base:"column" ,sm:"column", md:"row"}} marginTop={200} marginBottom={100} className={styles.main}>
+      <Stack justify="center" direction={{base:"column" ,sm:"column", md:"row"}}   className={styles.main}>
         
         <VStack 
        
@@ -140,7 +140,7 @@ minH={{base:"40px", md:"50px"}}
          
            w={{base:"300px", sm:"420px"}}
             style={{
-              backgroundColor: "#00AFAF",
+              backgroundColor: "blue",
               border: "none",
               color: " white",
               padding: "15px 32px",
